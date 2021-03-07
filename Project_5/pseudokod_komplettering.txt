@@ -1,0 +1,34 @@
+Låt grafen med elever vara G och den ena uppgiften x och den andra y
+
+
+def different_assignments(G):
+	L = ['Fungerar']
+	visited_vertices = mark all vertices as not visited and store in visited_vertices
+	while not all vertices visited:
+		v = godtyckligt ickebesökt hörn
+		DFS(G,v,x,L,visited_vertices)
+	return L[0]
+
+
+def DFS(G, v, former_assignment, L, visited_vertices)
+	if v already visited:
+		if former_assignment == v.assignment:
+			L[0] = 'Fungerar ej'
+			return
+		else:
+			return
+	
+	mark v as visited
+	if former_assignment == x:
+		v.assignment = y
+	else:
+		v.assignment = x
+
+	for all neighbors x of v:
+		DFS(G, x, v.assignment, L)
+
+
+Tidskomplexiteten för DFS kommer blir precis som vanligt då jag inte lagt till några operationer inne i DFS av högre ordning än O(1).Dvs. vi kan använda det rekursiva anropet till DFS som en elementär operation vilket ger tidskomplexiteten O(V+E) där V är antalet hörn och E mängden kanter eftersom man från varje hörn kan travesera en närhetslista för att komma till hörnets grannar. Eftersom grafen inte är riktad kommer det totala antalet element i denna lista vara 2E vilket ger tidskomplexiteten O(V + 2E) vilket ungefär är O(V+E). 
+
+
+Tidskomplexiteten för different_assignments kommer därmed också bli O(V+E) eftersom det enda som inte är O(1) är loopen över de ickebesökta hörnen. I fallet att vi har en sammansatt graf kommer detta vara O(1) och annars vid icke-sammansatta grafer "summerar" vi bara över antalet isolerade delgrafer vilket gör att vi återfår tidskomplexiteten O(V+E) där V är det totala antalet hörn och E den totala mängden kanter.

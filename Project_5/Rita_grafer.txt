@@ -1,0 +1,10 @@
+Det existerar inga enkla sammanhängande grafer för hörnen 1, 2, 3, 4 där varje hörn
+har gradtal 1.
+
+Enkla sammanhängande grafer där varje hörn har gradtal 2:
+1: Grafen med kanter {{1,2}, {1,3}, {2,4}, {3,4}}
+2: Grafen med kanter {{1,2}, {1,4}, {2,3}, {3,4}}
+3: Grafen med kanter {{1,3}, {1,4}, {2,3}, {2,4}}
+
+Enkla sammanhängande grafer med gradtal 3:
+Det finns endast en och det är grafen med kanter {{1,2}, {1,3}, {1,4}, {2,3}, {2,4}, {3,4}}

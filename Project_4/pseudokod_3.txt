@@ -1,0 +1,3 @@
+def sort2(a):    elem_dict = {}    for i=0 to len(a)-1        if a[i] in elem_dict:            elem_dict[a[i]] += 1        else:            elem_dict[a[i]] = 1        distict_elem = []    for key in elem_dict.keys():        distict_elem.append(key)        sorted_distict = quicksort(distict_elem) #Man kan även använda andra sorteringsalgoritmer som är O(nlogn), dvs. detta steg är O(klogk)    output = len(a) * []    for elem = sorted_distict[0] to sorted_distict[len(sorted_distict) – 1]:        new = elem_dict[elem] * [int(elem)]        output += new    return output
+
+Algortimen blir linjär då klogk tillhör O(n) för då kommer O(n+klogk) tillhöra O(n+n) = O(2n) = O(n) som är linjär.

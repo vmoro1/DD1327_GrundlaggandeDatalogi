@@ -1,0 +1,16 @@
+1)
+Rekursionen fungerar eftersom det undersöker alla olika möjligheter. Algoritmen tar sig ner till botten av trädet och
+sedan på varje nivå väljer den variant som ger maximal vinst.
+
+4)
+Tidskomplexiteten blir exponentiell eftersom vi för ett givet anropp i nivå kommer göra fler anropp i nivån under
+tillhörande samma anropp i nivån över. Dvs. varje anropp förgrenar trädet ytterligare vilket ger exponentiell tidskomplexitet.
+Mer specifikt så gäller för p(n) att vi behöver göra 2^0 + 2^1 +...+ 2^(n-1) anropp vilket ger en tidskomplexitet på O(2^n).
+
+6)
+Med hjälp av trädet kan vi bilda tabellen p_n[i] = p(i) som p_n = [0, 2, 5, 7, 10]
+
+7)
+När vi träffar på ett värde som vi tidigare räknat ut så kommer vi att hämta det värdet från cache istället för att
+räkna ut det igen. Detta gör att vi kommer få O(n^2) eftersom vi endast kommer att behöva besöka ett kvadratiskt antal
+noder vilket medför kvadratiskt tidskomplexitet.

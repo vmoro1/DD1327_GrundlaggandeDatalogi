@@ -1,0 +1,9 @@
+DiskussionFrån plottarna kan vi se att den teoretiskt beräknade tidskomplexiteten för sum1 och sum2 överensstämmer med de praktiska resultaten då vi ser att båda kurvorna är linjära vilket är det man kan förvänta sig av theta(n), linjär komplexitet. 
+
+Däremot så verkar tidskomplexiteten för pow vara theta(n) om man kollar på grafen i den första plotten då beräkningstiden växer linjärt medan den teoretiskt beräknades till theta(log n). 
+
+Jag kommer på två olika delar som skulle kunna orsaka denna skillnad mellan den praktiska och teoretiska komplexiteten. Dels skulle hårdvaran kunna påverka tex. genom branch-prediction som gör att alla operationer generellt inte har samma kostnad. Dessutom lagras många vanligt förekommande variabler i cash-minnet vilket gör att dessa går betydligt snabbare att hämta än de som inte lagras där.
+
+Utöver detta skulle man även kunna tänka sig att koden är skriven på ett sådant sätt att vissa operationer hanteras annorlunda beroende på inputens storlek. 
+
+Emellertid känns inte någon av dessa förklaringar speciellt övertygande vilket beror på att den beräknade tidskomplexiteten för pow var felaktig. När man "slicear" listan kommer python kopiera listan vilket gör att tidskomplexiteten egentligen är O(nlogn). O(nlogn) ser ut nästan exakt som O(n) för stora n vilket stämmer överens med plotten och eftersom det största n är så stort så är den delen där nlogn skulle vara större än n nästan obefintlig i plotten vilket gör det svårt att utläsa något rent visuellt. Man skulle antagligen kunna se detta om man plottade tex n=1,2,...,100 där n inte blir för stort.
